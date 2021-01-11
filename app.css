@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body {
+    background-color:gray;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+}
+.api_data3{
+    font-family: cursive;
+}
+
+
+.data{
+    min-height: 8em;
+    background-color: transparent;
+    flex: 0 0 33.3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form2{
+    flex: 0 0 66.6%;
+    display: flex;
+}
+
+.form{
+    height: 100%;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+textarea{
+    resize: vertical;
+    min-height: 4em;
+    max-height: 14em;
+}
+.data h2{
+    margin: 5px 0;
+}
+.input{
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-top: .5em;
+    box-sizing: border-box;
+    height: 2.5em;
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+}
+.form-group{
+    align-self: flex-end;
+    margin-top: auto;
+    width: 50%;
+}
+button{
+    box-shadow: 0px 0px 8px 1px #888888; 
+    transition: all .2s ease-in-out;
+}
+button:active{
+    position: relative;
+    top: 1px;
+}
+button:hover{
+ box-shadow:0px 0px 16px 3px #888888;
+}
+
+.input:focus{
+    outline: none;
+    text-align: center;
+}
+.api_data1{
+    color: darkgreen;
+    font-family:-webkit-pictograph;
+    font-size: 3em ;
+}
+.api_data3{
+    color: darkgreen;
+    font-family:cursive;
+    font-size: 4em ;
+    margin-top: 1em;
+}
+.api_data2{
+    margin-top: 20px;
+    font-size: 4em;
+    color: darkgreen;
+    border-top: 4px solid #940C0C;
+    display: inline-block;
+    width: 70%;
+    font-family: 'Times New Roman', Times, serif;
+}
+.warning{
+    border: 2px solid red;
+    border-radius: 5px;
+    color: blue;
+    font-size: 1em;
+    padding: 10px;
+}
+.warning_input{
+    border: 2px solid red;
+}
