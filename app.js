@@ -20,15 +20,13 @@ button.addEventListener('click', async () => {
     document.querySelector('#temp').innerHTML = ''
     document.querySelector('#name').innerHTML = ''
     document.querySelector('.loader').style.display = 'block'
+    document.querySelector('#background').style.display = 'none'
 
-    // document.querySelector('img').src  = `https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif`
-
-    let today_date = new Date();
 
     let data = await getData(baseUrl, zipCode.value, {
         // credentials: 'omit'
     })
-
+    check_errors(data.msg)
     if (data.cod === '404') {
         return;
     }
