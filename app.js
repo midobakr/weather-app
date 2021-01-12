@@ -18,15 +18,17 @@ button.addEventListener('click', async () => {
     }
     document.querySelector('#content').innerHTML = ''
     document.querySelector('#temp').innerHTML = ''
-    document.querySelector('body').style.backgroundImage = `url(https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif)`
+    document.querySelector('#name').innerHTML = ''
+    document.querySelector('.loader').style.display = 'block'
+
+    // document.querySelector('img').src  = `https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif`
 
     let today_date = new Date();
 
     let data = await getData(baseUrl, zipCode.value, {
         // credentials: 'omit'
     })
-    console.log('ff==>',data)
-    console.log(data.status)
+
     if (data.cod === '404') {
         return;
     }
@@ -38,7 +40,10 @@ button.addEventListener('click', async () => {
         // credentials: 'omit'
     }).then(res => res.json()).then((res) => {
         console.log(res.photos[0])
-        document.querySelector('body').style.backgroundImage = `url(${res.photos[0].src.landscape})`
+        document.querySelector('.loader').style.display = 'none'
+        document.querySelector('#background').src = res.photos[0].src.landscape
+        document.querySelector('#background').style.display = 'block'
+
     })
 
     console.log(data)
@@ -61,7 +66,7 @@ async function getData(baseUrl, zip) {
 async function updateUI(data) {
     document.querySelector('#temp').innerHTML = `<h1><span class='api_data1'> ${data.temperature}&#8451</span></h1>`;
     document.querySelector('#content').innerHTML = `<h3><span class='api_data2'>${data.weather.description.toUpperCase()}</span></h3>`;
-    document.querySelector('#name').innerHTML = `<h3><span class='api_data2 api_data3'>${data.name}</span></h3>`;
+    document.querySelector('#name').innerHTML = `<h3><span class='api_data3'>${data.name}</span></h3>`;
 }
 
 function check_errors(msg) {
