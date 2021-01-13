@@ -48,7 +48,6 @@ button.addEventListener('click', async () => {
 
     await updateUI({
         temperature: data.main.temp,
-        date: today_date.toLocaleString(),
         weather: data.weather[0],
         name:data.name
     })
